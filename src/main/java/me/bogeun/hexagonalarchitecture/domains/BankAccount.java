@@ -1,10 +1,11 @@
 package me.bogeun.hexagonalarchitecture.domains;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import java.math.BigDecimal;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class BankAccount {
 
     private Long id;

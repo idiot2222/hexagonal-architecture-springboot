@@ -1,5 +1,6 @@
 package me.bogeun.hexagonalarchitecture.adapters.persistence;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import me.bogeun.hexagonalarchitecture.domains.BankAccount;
 import me.bogeun.hexagonalarchitecture.ports.outgoing.LoadAccountPort;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Component
 public class BankAccountRepository implements LoadAccountPort, SaveAccountPort {
 
@@ -23,4 +24,5 @@ public class BankAccountRepository implements LoadAccountPort, SaveAccountPort {
     public void save(BankAccount bankAccount) {
         repository.save(bankAccount);
     }
+
 }

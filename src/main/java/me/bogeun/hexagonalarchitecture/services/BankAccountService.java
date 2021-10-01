@@ -1,6 +1,8 @@
 package me.bogeun.hexagonalarchitecture.services;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import me.bogeun.hexagonalarchitecture.adapters.persistence.BankAccountRepository;
 import me.bogeun.hexagonalarchitecture.domains.BankAccount;
 import me.bogeun.hexagonalarchitecture.ports.incoming.DepositUseCase;
 import me.bogeun.hexagonalarchitecture.ports.incoming.WithDrawUseCase;
@@ -10,11 +12,12 @@ import me.bogeun.hexagonalarchitecture.ports.outgoing.SaveAccountPort;
 import java.math.BigDecimal;
 import java.util.NoSuchElementException;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class BankAccountService implements DepositUseCase, WithDrawUseCase {
 
     private LoadAccountPort loadAccountPort;
     private SaveAccountPort saveAccountPort;
+
 
     @Override
     public void deposit(Long id, BigDecimal amount) {

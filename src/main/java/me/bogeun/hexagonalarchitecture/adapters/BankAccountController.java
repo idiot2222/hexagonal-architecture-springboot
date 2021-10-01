@@ -1,5 +1,6 @@
 package me.bogeun.hexagonalarchitecture.adapters;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import me.bogeun.hexagonalarchitecture.ports.incoming.DepositUseCase;
 import me.bogeun.hexagonalarchitecture.ports.incoming.WithDrawUseCase;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.math.BigDecimal;
 
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 @RestController
 @RequestMapping("/account")
 public class BankAccountController {
@@ -28,4 +29,5 @@ public class BankAccountController {
     void withdraw(@PathVariable Long id, @PathVariable BigDecimal amount) {
         withDrawUseCase.withdraw(id, amount);
     }
+
 }
